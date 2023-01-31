@@ -1,0 +1,138 @@
+<html>
+<head>
+    <style>
+        /* CSS for the image slider */
+        .img-slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .img-slider .slide {
+            width: 100%;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .img-slider .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .img-slider .slide .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .img-slider .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* CSS for the navigation buttons */
+        .img-slider .prev, .img-slider .next {
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: black;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            cursor: pointer;
+        }
+
+        .img-slider .prev {
+            left: 10px;
+        }
+
+        .img-slider .next {
+            right: 10px;
+        }
+        h2 {
+            font-family: 'Chakra Petch', sans-serif;
+        }
+        p {
+            font-family: 'Chakra Petch', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-slider">
+        <div class="slide active">
+            <img src="pol.jpg" alt=""> 
+            <div class="info">
+                <h2> Goverment engangenment</h2>
+                <p>IYF-Namibia have been enganging with Namibian goverment stakehilders from differents organs and ministries to discuss how to strengthen youth mindset and share common interests within the goverment of the Republic of Namibia </p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="twd.jpg" alt=""> 
+            <div class="info">
+                <h2> IYF Activies in Namibia</h2>
+                <p>IYF-Namibia encourage strengthen youths mindset by encouring them to participate in physical activies such as Taekwondo, mind games such a Hoola Hoops and many more.</p>
+            </div>
+        </div>
+                <div class="slide">
+            <img src="vc.jpg" alt=""> 
+            <div class="info">
+                <h2> Amplifying Youth Voice</h2>
+                <p>IYF Namibia encourage youth participation in order to share their heart with other youth in Namibia. IYF-Namibia let the voice of the youth to be heard across the Namibian nation in order to shape the future of namibia for the better.</p>
+            </div>
+         </div>
+         <div class="slide">
+               <img src="v2.png" alt="">
+               <div class="info">
+                    <h2>Volunteering</h2>
+                    <p>IYF-Namibia is non-profit wordwide NGO and encourages youth to volunteer for the program to facilitate differnt activities of the programs. Volunteers are the intergral part of IYF-Namibia and what are you vaiting for? Join our volunteer team.</p>
+                </div>
+           </div>
+        <div class="prev">❮</div>
+        <div class="next">❯</div>
+    </div>
+    <script>
+    // JavaScript for the image slider
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+    </script>
+</body>
+</html>
+
